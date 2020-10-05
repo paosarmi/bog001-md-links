@@ -1,4 +1,10 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
