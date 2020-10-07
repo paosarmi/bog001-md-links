@@ -1,6 +1,12 @@
 {
   "name": "md-links",
   "version": "0.1.0",
+  "description": "",
+  "author": "paosarmi",
+  "main": "index.js",
+  "bin": {
+    "mdLinks": "./bin/mdLinks"
+  },
   "scripts": {
     "test": "jest --verbose --coverage"
   },
@@ -8,6 +14,7 @@
     "jest": "^26.4.2"
   },
   "dependencies": {
+    "chalk": "^4.1.0",
     "xmlhttprequest": "^1.8.0"
   }
 }

@@ -1,4 +1,5 @@
 const fs = require("fs");
+const chalk = require("chalk");
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 /*leer de manera sincrona el archivo (path) y retornar el contenido como una cadena de caracteres (string) */
