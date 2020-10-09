@@ -1,12 +1,9 @@
 {
-  "name": "md-links",
-  "version": "0.1.0",
+  "name": "@paosarmi/md-links",
+  "version": "1.0.1",
   "description": "",
   "author": "paosarmi",
   "main": "index.js",
-  "bin": {
-    "mdLinks": "./bin/mdLinks"
-  },
   "scripts": {
     "test": "jest --verbose --coverage"
   },
