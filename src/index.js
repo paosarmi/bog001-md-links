@@ -127,15 +127,19 @@ const noOptions = (path) => {
 };
 
 const mdLinks = (path, options) => {
-  if (options.validate && !options.stats) {
-    return onlyValidate(path);
-  } else if (options.stats && !options.validate) {
-    return onlyStats(path);
-  } else if (options.validate && options.stats) {
-    return validateAdnStats(path);
-  } else {
-    return noOptions(path);
-  }
+  return new Promise((resolve, reject) => {
+    let result = [];
+    if (options.validate && !options.stats) {
+      result = onlyValidate(path);
+    } else if (options.stats && !options.validate) {
+      result = onlyStats(path);
+    } else if (options.validate && options.stats) {
+      result = validateAdnStats(path);
+    } else {
+      result = noOptions(path);
+    }
+    resolve(result);
+  });
 };
 
 module.exports = mdLinks;
