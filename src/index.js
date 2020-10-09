@@ -63,7 +63,7 @@ const checkLink = (link) => {
   link.ok = link.status == 404 ? "fail" : "ok";
 };
 
-/* procesa un archivo, extrae la data, luego los link y los valida uno a uno*/
+/* procesa un archivo, extrae la data, luego los link*/
 const processPath = (path) => {
   let links = [];
   if (checkIfDirectory(path)) {
@@ -80,6 +80,7 @@ const processPath = (path) => {
   return links;
 };
 
+/*obtiene los links del path y valida que esten activos */
 const onlyValidate = (path) => {
   let links = processPath(path);
   links.forEach((link) => {
@@ -88,6 +89,7 @@ const onlyValidate = (path) => {
   return links;
 };
 
+/*obtiene los links y dice cuantos hay y cuales son unicos */
 const onlyStats = (path) => {
   let links = processPath(path);
   let setLinks = new Set();
@@ -99,6 +101,8 @@ const onlyStats = (path) => {
   return { Total: links.length, Unique: setLinks.size };
 };
 
+/*obtiene los links, valida que esten activos y muestra cuantos hay, cuales son unicos
+y cuales estan dañados */
 const validateAdnStats = (path) => {
   let links = processPath(path);
   links.forEach((link) => {
@@ -121,11 +125,13 @@ const validateAdnStats = (path) => {
   return { Total: links.length, Unique: setLinks.size, Broken: broken };
 };
 
+/*retorna la lista de los links */
 const noOptions = (path) => {
   let links = processPath(path);
   return links;
 };
 
+/*retorna el resulta segun las opciones y lo guarda en una promesa */
 const mdLinks = (path, options) => {
   return new Promise((resolve, reject) => {
     let result = [];
