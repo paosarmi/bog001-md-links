@@ -7,7 +7,7 @@ const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 const pathLib = require("path");
 const { link } = require("fs");
 
-/*validr si el path es un directorio */
+/*validar si el path es un directorio */
 const checkIfDirectory = (path) => {
   return fs.lstatSync(path).isDirectory();
 };
@@ -34,7 +34,7 @@ const readFile = (path) => {
 };
 
 /*lee la data (string), los separa por salto de linea (\n) y valida con una expresión regular si contiene
-o no una URL, si lo tiene crea un objeto {url, status} por cada uno y lo guarda en un arreglo (links) */
+o no una URL, si lo tiene crea un objeto {href, status, ok, file, text} por cada uno y lo guarda en un arreglo (links) */
 const getLinks = (data, path) => {
   const links = [];
   var dataSplit = data.split("\n");
