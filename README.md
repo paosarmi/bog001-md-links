@@ -26,9 +26,9 @@ Estos archivos `Markdown` normalmente contienen _links_ (vínculos/ligas) que
 muchas veces están rotos o ya no son válidos y eso perjudica mucho el valor de
 la información que se quiere compartir.
 
-## 2. Diegrama de flujo
+## 2. Diagrama de flujo
 
-[<img scr="img/diagrama-mdlinks-paola.png>]
+![Diagrama de flujo](/img/diagrama-mdlinks-paola.png)
 
 ## 3. Objetivos de aprendizaje
 
