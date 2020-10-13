@@ -1,4 +1,20 @@
 {
-  "name": "md-links",
-  "version": "0.1.0"
+  "name": "@paosarmi/md-links",
+  "version": "1.0.4",
+  "description": "",
+  "author": "paosarmi",
+  "main": "src/index.js",
+  "bin": {
+    "md-links": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "xmlhttprequest": "^1.8.0"
+  }
 }
