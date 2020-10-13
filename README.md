@@ -28,7 +28,7 @@ la información que se quiere compartir.
 
 ## 2. Diagrama de flujo
 
-![Diagrama de flujo](/img/diagrama-mdlinks-paola.png)
+![Diagrama de flujo](/img/image.png)
 
 ## 3. Objetivos de aprendizaje
 
