@@ -30,13 +30,62 @@ la información que se quiere compartir.
 
 ![Diagrama de flujo](/img/diagrama-paola.png)
 
+---
+
 ## 3. Instalación por paquete npm
 
 ```
-npm install @paosarmi/md-links
+npm link @paosarmi/md-links
+md-links <file-path> [options: --validate --stats]
+```
+---
+
+## 4. Ejemplos
+
+Mostrar todo los links
+
+```
+$ md-links test.md
+C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://www.facebook.com  Es una red social
+ C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://twitter.com/?lang=es  Es otra red social
+ C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://www.fakebuk.com  Esta es una red falsa
 ```
 
-## 4. Objetivos de aprendizaje
+Mostrar todos los links y validar
+
+````
+$ md-links test.md --validate
+C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://www.facebook.com ok 200  Es una red social
+ C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://twitter.com/?lang=es ok 200  Es otra red social
+ C:\Users\paosa\Documents\Proyectos Laboratoria\md-links-test\test.md https://www.fakebuk.com fail 404  Esta es una red falsa
+````
+
+Mostar estadisticas de los links 
+
+````
+$ md-links test.md --stats
+Total: 3
+Unique: 3
+````
+
+Mostrar estadisticas y estados de los links
+
+````
+$ md-links test.md --validate --stats
+Total: 3
+Unique: 3
+Broken: 1
+````
+
+Si hay más de 3 argumentos o menos de 1, arroja error
+
+````
+$ md-links
+Wrong number of arguments
+````
+---
+
+## 5. Objetivos de aprendizaje
 
 ### JavaScript
 
@@ -92,28 +141,6 @@ npm install @paosarmi/md-links
 
 ---
 
-## 5. Consideraciones generales
-
-- Este proyecto se debe "resolver" de manera individual.
-
-- La librería y script ejecutable (herramienta de línea de comando -
-  CLI) debe estar implementada en JavaScript para ser ejecutada con
-  Node.js. **Está permitido usar librerías externas**.
-
-- Tu módulo debe ser instalable via `npm install <github-user>/md-links`. Este
-  módulo debe incluir tanto un _ejecutable_ que podamos invocar en la línea de
-  comando como una interfaz que podamos importar con `require` para usarlo
-  programáticamente.
-
-- Los tests unitarios deben cubrir un mínimo del 70% de _statements_,
-  _functions_, _lines_ y _branches_. Te recomendamos explorar [Jest](https://jestjs.io/)
-  para tus pruebas unitarias.
-
-- Para este proyecto no está permitido utilizar `async/await`.
-
-- Para este proyecto es opcional el uso de ES Modules `(import/export)`, en el
-  caso optes utilizarlo deberás de crear un script de `build` en el `package.json`
-  que los transforme en `requires` y `module.exports` con ayuda de babel.
 
 ## 6. Checklist
 
